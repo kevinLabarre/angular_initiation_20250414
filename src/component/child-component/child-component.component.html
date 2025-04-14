@@ -13,5 +13,20 @@
   <p>Texte du 'else'</p>
   }
 
+  <!-- Sans 'Bind', si je veux que ma div reste editable -->
+  <div contentEditable="true">
+    Div éditable
+  </div>
+
+
+  <!-- Avec un 'Bind', lorsque la valeur de ma variable 'isEditable'
+    sera modifié dans le ts, le changement sera automatiquement appliqué
+    => Lorsque isEditable sera égale à false, la div ne sera plus editable
+  -->
+  <div [contentEditable]="isEditable">
+    Div éditable
+  </div>
+
+
 
 </section>

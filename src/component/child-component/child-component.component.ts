@@ -10,4 +10,6 @@ export class ChildComponentComponent {
 
   displayText: boolean = true;
 
+  isEditable = true;
+
 }
