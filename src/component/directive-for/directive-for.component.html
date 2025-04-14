@@ -1,0 +1,17 @@
+<section>
+  <ul>
+    @for(user of users ; track user.id){
+    <li>{{user.name}}</li>
+    }
+  </ul>
+
+  <!-- attention, track de l'index possible mais à utiliser
+    sur des listes statiques (-> des listes qui ne seront pas modifiées)
+  -->
+  @for(person of persons; track $index){
+  <li>{{person}}</li>
+  } @empty {
+  <li>LISTE VIDE </li>
+  }
+
+</section>

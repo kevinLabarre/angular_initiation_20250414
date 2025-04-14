@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { IPerson } from '../interface/IPerson';
 import { ChildComponentComponent } from '../component/child-component/child-component.component';
+import { DirectiveForComponent } from "../component/directive-for/directive-for.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, ChildComponentComponent],
+  imports: [RouterOutlet, ChildComponentComponent, DirectiveForComponent],
   templateUrl: './app.component.html',
   // template: `<h1>Bienvenue sur mon app Angular !</h1>`,
   styleUrl: './app.component.css'
