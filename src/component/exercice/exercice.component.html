@@ -1,4 +1,48 @@
 <section>
+  <h1>Exercice</h1>
+
   <pre [innerHTML]="consigne"></pre>
+
+  <form (submit)="handleSearch()">
+    <input type="text" name="searchInput" [(ngModel)]="searchInput">
+    <button type="submit">Rechercher</button>
+  </form>
+
+
+  @for( user of users; track user.email ; let index = $index){
+  <ul>
+    <li>index : {{index}}</li>
+    <li>{{user.name}}</li>
+    <li>{{user.age}}</li>
+    <li>{{user.address}}</li>
+    <li>{{user.phone}}</li>
+    <li>{{user.email}}</li>
+    <li>
+      <button (click)="handleDeleteUser(index)">Supprimer</button>
+    </li>
+  </ul>
+  }
+
+  <button (click)="handleDisplayForm()">Afficher / Masquer le formulaire</button>
+  @if (displayForm){
+  <form (submit)="handleAddUser()">
+    <label for="name">Nom: </label>
+    <input type="text" name="name" [(ngModel)]="name">
+
+    <label for="age">Age: </label>
+    <input type="text" name="age" [(ngModel)]="age">
+
+    <label for="address">Adresse: </label>
+    <input type="text" name="address" [(ngModel)]="address">
+
+    <label for="phone">Tél: </label>
+    <input type="text" name="phone" [(ngModel)]="phone">
+
+    <label for="email">Email: </label>
+    <input type="text" name="email" [(ngModel)]="email">
+    <button type="submit">Ajouter</button>
+  </form>
+  }
+
 
 </section>

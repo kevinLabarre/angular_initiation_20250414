@@ -1,12 +1,25 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-exercice',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './exercice.component.html',
   styleUrl: './exercice.component.css'
 })
 export class ExerciceComponent {
+
+  displayForm: boolean = false
+
+  name: string = ""
+  age: number = 0
+  address: string = ""
+  phone: string = ""
+  email: string = ""
+
+  // Variable de l'input de la barre de recherche
+  //  bind avec ngModel
+  searchInput: string = ""
 
   consigne: string = "<pre>" +
     " <ul class='text-l pt-2'>" +
@@ -33,7 +46,7 @@ export class ExerciceComponent {
 
 
 
-  users: any = [
+  users: any[] = [
     {
       name: 'John Doe',
       age: 30,
@@ -56,4 +69,40 @@ export class ExerciceComponent {
       email: 'bob.smith@example.com'
     }
   ]
+
+  originelUsers: any = [] = [...this.users]
+
+
+  handleDeleteUser(index: number): void {
+    this.users.splice(index, 1)
+  }
+
+  handleDisplayForm(): void {
+    this.displayForm = !this.displayForm
+  }
+
+  handleAddUser(): void {
+    this.users.push({
+      name: this.name,
+      age: this.age,
+      address: this.address,
+      phone: this.phone,
+      email: this.email
+    })
+
+    this.resetForm()
+  }
+
+  resetForm(): void {
+    this.name = "";
+    this.age = 0;
+    this.address = "";
+    this.phone = "";
+    this.email = "";
+    this.displayForm = false
+  }
+
+  handleSearch(): void {
+    this.users = this.originelUsers.filter((user: any) => user.name.toLowerCase().includes(this.searchInput.toLowerCase()))
+  }
 }
