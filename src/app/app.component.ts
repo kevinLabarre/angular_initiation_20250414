@@ -5,10 +5,11 @@ import { DirectiveForComponent } from "../component/directive-for/directive-for.
 import { EventHandlingComponent } from "../component/event-handling/event-handling.component";
 import { UserComponent } from "../component/user/user.component";
 import { FormComponent } from "../component/form/form.component";
+import { ExerciceComponent } from "../component/exercice/exercice.component";
 
 @Component({
   selector: 'app-root',
-  imports: [ChildComponentComponent, DirectiveForComponent, EventHandlingComponent, UserComponent, FormComponent],
+  imports: [ChildComponentComponent, DirectiveForComponent, EventHandlingComponent, UserComponent, FormComponent, ExerciceComponent],
   templateUrl: './app.component.html',
   // template: `<h1>Bienvenue sur mon app Angular !</h1>`,
   styleUrl: './app.component.css'
