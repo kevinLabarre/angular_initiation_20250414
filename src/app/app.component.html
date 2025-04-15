@@ -23,5 +23,7 @@
 <app-exercice />
 
 <!-- Passage de données d'enfant à parent avec @Output -->
-<app-directive-ouptup (passCheckBoxValue)="passCheckBoxValue($event)" />
-<p>myChildData: {{ myChildData }}</p>
+<app-directive-ouptup (passCheckBoxValue)="passCheckBoxValue($event)"
+  (passInputTextValue)="passInputTextValue($event)" />
+<p>Valeur case à cocher: {{ myChildData }}</p>
+<p>Valeur input: {{ myChildInputValue }}</p>

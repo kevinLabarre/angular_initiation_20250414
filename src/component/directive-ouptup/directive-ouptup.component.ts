@@ -11,16 +11,19 @@ export class DirectiveOuptupComponent {
 
   @Output() passCheckBoxValue = new EventEmitter<boolean>();
 
+  @Output() passInputTextValue = new EventEmitter<string>();
+
   checkBoxValue: boolean = false
 
-  handleInputChange(event: Event) {
+  handleCheckboxChange(event: Event) {
     const target = event.target as HTMLInputElement;
-
     this.passCheckBoxValue.emit(target.checked)
   }
 
 
-  // Créer une input, Afficher le contenu de l'input sur le composant parent
-
+  handleInputTextChange(e: Event) {
+    const target = e.target as HTMLInputElement;
+    this.passInputTextValue.emit(target.value)
+  }
 
 }

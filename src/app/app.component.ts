@@ -29,8 +29,15 @@ export class AppComponent {
 
   myChildData: boolean = false
 
+  myChildInputValue: string = ""
+
   passCheckBoxValue(checkBoxValue: boolean) {
     this.myChildData = checkBoxValue
+  }
+
+  passInputTextValue(inputTextValue: string) {
+    this.myChildInputValue = inputTextValue;
+
   }
 
   present(name: string): string {
