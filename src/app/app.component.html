@@ -21,3 +21,7 @@
 
 <!-- Exercice -->
 <app-exercice />
+
+<!-- Passage de données d'enfant à parent avec @Output -->
+<app-directive-ouptup (passCheckBoxValue)="passCheckBoxValue($event)" />
+<p>myChildData: {{ myChildData }}</p>

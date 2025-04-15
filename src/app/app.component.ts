@@ -6,10 +6,11 @@ import { EventHandlingComponent } from "../component/event-handling/event-handli
 import { UserComponent } from "../component/user/user.component";
 import { FormComponent } from "../component/form/form.component";
 import { ExerciceComponent } from "../component/exercice/exercice.component";
+import { DirectiveOuptupComponent } from "../component/directive-ouptup/directive-ouptup.component";
 
 @Component({
   selector: 'app-root',
-  imports: [ChildComponentComponent, DirectiveForComponent, EventHandlingComponent, UserComponent, FormComponent, ExerciceComponent],
+  imports: [ChildComponentComponent, DirectiveForComponent, EventHandlingComponent, UserComponent, FormComponent, ExerciceComponent, DirectiveOuptupComponent],
   templateUrl: './app.component.html',
   // template: `<h1>Bienvenue sur mon app Angular !</h1>`,
   styleUrl: './app.component.css'
@@ -26,6 +27,11 @@ export class AppComponent {
 
   person: IPerson = { name: "Bob", age: 25 }
 
+  myChildData: boolean = false
+
+  passCheckBoxValue(checkBoxValue: boolean) {
+    this.myChildData = checkBoxValue
+  }
 
   present(name: string): string {
     return `Hello ${name}`
